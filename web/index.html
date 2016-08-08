@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.edit
+-->
+<html>
+    <head>
+        <title>TripChecker: leggi le recensioni, confronta i prezzi e prenota</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <!-- 
+            We reference boostrap stylesheets. Notice that we reference the "online" version, the 
+            one in ther content distribution network. If you download bootstrap, then you shoul reference
+            the one in your local system
+        -->
+
+        <!-- 
+             You can also override some of the styles that come by default, or create new ones. These extensions
+             should go in a separate files to make sure we don't lose them if we update the boostrap version in the future.
+             Note: Boostrap also offers the "source code" in *less* to facilitate extensions, but that's outsite the 
+             scope of this course.
+        -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav class="navbar  .navbar-inverse">
+            <div class="container-fluid"> 
+                <!-- this is for the header, the logo usually goes here -->
+                <div class="navbar-header"> <a class="navbar-brand" href="#"> Project name </a> </div>
+            </div>
+        </nav>
+
+        <!-- This is the main container of the entire page -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">.col-md-3</div>
+                <div class="col-md-9">
+                    <div id="tagline">
+                        <h1>Bootstrap starter template</h1>
+                        <p class="lead"> Use this document as a way to quickly start any new project.
+                            All you get is this text and a mostly barebones HTML document. </p>
+                        <form>
+                            <!-- 
+                                 if you try using form-inline you won't get the desired output. 
+                                 you'll see not only the form-groups, but all the elements inline.
+                                 here I go for the standard layout classes.
+                            -->
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <!-- 
+                                              'for' is used to link the label with the input element.
+                                              if you click on the label, you'll see that the input gets
+                                              the focus.
+                                        -->                          
+                                        <label for="ititle">Title</label>          
+                                        <input type="text" class="form-control" id="ititle" placeholder="Mr.">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="ifname">First name</label>          
+                                        <input type="text" class="form-control" id="ifname" placeholder="Chee Kin">
+                                    </div>        
+                                </div>
+
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label for="ilname">Last name</label>          
+                                        <input type="text" class="form-control" id="ilname" placeholder="Lin">
+                                    </div>       
+                                </div>                    
+                            </div>
+
+                            <!-- Well, here you should put the rest of the stuff -->
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
