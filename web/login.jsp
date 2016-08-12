@@ -16,7 +16,7 @@
         
         <form action="Login" method="POST">
             <div>
-                <label for="input_username">Username:</label> <input id="input_username" type="text" name="username" value="" size="20" />
+                <label for="input_username">Username:</label> <input id="input_username" type="text" name="nickname" value="" size="20" />
             </div>
             <div>
                 <label for="input_password">Password:</label> <input id="input_password" type="password" name="password" value="" size="20" />

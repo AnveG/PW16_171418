@@ -50,7 +50,7 @@ public class DBManager implements Serializable {
     public User authenticate(String username, String password) throws SQLException {
         // usare SEMPRE i PreparedStatement, anche per query banali. 
         // *** MAI E POI MAI COSTRUIRE LE QUERY CONCATENANDO STRINGHE !!!! ***
-        PreparedStatement stm = con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+        PreparedStatement stm = con.prepareStatement("SELECT * FROM users WHERE nickname = ? AND password = ?");
         try {
             stm.setString(1, username);
             stm.setString(2, password);
@@ -60,7 +60,7 @@ public class DBManager implements Serializable {
                 if (rs.next()) {
                     User user = new User();
                     user.setUsername(username);
-                    user.setFullname(rs.getString("fullname"));
+                    user.setFullname(rs.getString("name"));
                     
                     return user;
                 } else {
