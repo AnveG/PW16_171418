@@ -113,4 +113,32 @@ public class DBManager implements Serializable {
         return -1;
     }
     
+    public String modifica (User user, String name, String surname, String nickname, String password, String email) throws SQLException{
+        String emailattuale = user.getEmail(); //bisogna inserirlo in User
+        String res = null;
+        PreparedStatement stm = con.prepareStatement("UPDATE user SET email = ?, name = ?, surname = ?, username = ?, password = ? WHERE email = ?");
+        try {
+                stm.setString(1, email);
+                stm.setString(2, name);
+                stm.setString(3, surname);
+                stm.setString(4, nickname);
+                stm.setString(5, password);
+                stm.setString(6, emailattuale);              
+
+                int rs = stm.executeUpdate();
+                
+                if(rs==1){ //inserito correttamente
+                    res = "Dati aggiornati!";
+                } else {  // non inserito
+                    res = "Errore";
+                }
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(DBManager.class.getName()).info(ex.getMessage());
+            } finally {
+                stm.close();
+            }
+    return res;   
+    }
+    
 }
